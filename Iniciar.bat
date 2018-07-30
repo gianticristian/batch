@@ -87,5 +87,5 @@ start %sql%
 timeout /t %esperaCorta%
 )
 
-
+:Salir
 exit
