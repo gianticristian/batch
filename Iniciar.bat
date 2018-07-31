@@ -7,8 +7,8 @@ set esperaLarga=30
 
 :Inicio
 cls
-echo Seleccionar Transmisor
-echo ----------------------
+echo Iniciar Programas
+echo -----------------
 echo:
 echo [1] Iniciar Todo
 echo [2] Salir
@@ -76,7 +76,7 @@ timeout /t %esperaLarga%
 ::InternetExplorer
 set internetExplorer=c:\"Program Files (x86)\Internet Explorer\iexplore.exe"
 tasklist /nh /fi "Imagename eq iexplore.exe" | find /i "iexplore.exe" >nul && ( echo: ) || ( 
-start %internetExplorer% oep.servicios.oca
+start %internetExplorer% "oep.servicios.oca"
 timeout /t %esperaCorta%
 )
 
@@ -85,6 +85,7 @@ set sql=c:\"Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementSt
 tasklist /nh /fi "Imagename eq Ssms.exe" | find /i "Ssms.exe" >nul && ( echo: ) || ( 
 start %sql%
 timeout /t %esperaCorta%
+goto Salir
 )
 
 :Salir
