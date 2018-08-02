@@ -59,13 +59,6 @@ start %outlook%
 timeout /t %esperaCorta%
 )
 
-::Skype
-set skype=c:\"Program Files (x86)\Microsoft\Skype for Desktop\Skype.exe"
-tasklist /nh /fi "Imagename eq Skype.exe" | find /i "Skype.exe" >nul && ( echo: ) || ( 
-start %skype% 
-timeout /t %esperaCorta%
-)
-
 ::Tickets
 set tickets=c:\"Program Files\Microsoft System Center 2012 R2\Service Manager\Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe"
 tasklist /nh /fi "Imagename eq Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe" | find /i "Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe" >nul && ( echo: ) || ( 
