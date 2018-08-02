@@ -1,6 +1,5 @@
 @echo off
 title Iniciar Programas
-set esperaMinima=5
 set esperaCorta=15
 set esperaLarga=30
 
@@ -35,28 +34,28 @@ timeout /t %esperaLarga%
 set audioSwitcher=c:\"Program Files\Audio Switcher\AudioSwitcher.exe"
 tasklist /nh /fi "Imagename eq AudioSwitcher.exe" | find /i "AudioSwitcher.exe" >nul && ( echo: ) || ( 
 start %audioSwitcher% 
-timeout /t %esperaMinima%
+timeout /t %esperaCorta%
 )
 
 ::Shotty
 set shotty=c:\"Program Files\Shotty\Shotty.exe"
 tasklist /nh /fi "Imagename eq Shotty.exe" | find /i "Shotty.exe" >nul && ( echo: ) || ( 
 start %shotty% 
-timeout /t %esperaMinima%
+timeout /t %esperaCorta%
 )
 
 ::OneDrive
 set oneDrive=c:\Users\gianti.cristian\AppData\Local\Microsoft\OneDrive\OneDrive.exe
 tasklist /nh /fi "Imagename eq OneDrive.exe" | find /i "OneDrive.exe" >nul && ( echo: ) || ( 
 start %oneDrive% /background 
-timeout /t %esperaCorta%
+timeout /t %esperaLarga%
 )
 
 ::Outlook
 set outlook=c:\"Program Files (x86)\Microsoft Office\Office14\Outlook.exe"
 tasklist /nh /fi "Imagename eq Outlook.exe" | find /i "Outlook.exe" >nul && ( echo: ) || ( 
 start %outlook% 
-timeout /t %esperaCorta%
+timeout /t %esperaLarga%
 )
 
 ::Tickets
@@ -77,7 +76,7 @@ timeout /t %esperaCorta%
 set sql=c:\"Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
 tasklist /nh /fi "Imagename eq Ssms.exe" | find /i "Ssms.exe" >nul && ( echo: ) || ( 
 start %sql%
-timeout /t %esperaCorta%
+timeout /t %esperaLarga%
 goto Salir
 )
 
