@@ -75,7 +75,7 @@ timeout /t 120
 set oneDrive=c:\Users\gianti.cristian\AppData\Local\Microsoft\OneDrive\OneDrive.exe
 tasklist /nh /fi "Imagename eq OneDrive.exe" | find /i "OneDrive.exe" >nul && ( echo: ) || ( 
 start %oneDrive% /background 
-timeout /t 120
+timeout /t 15
 goto Salir
 )
 
