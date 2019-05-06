@@ -43,6 +43,13 @@ start %shotty%
 timeout /t 15
 )
 
+::Zoom
+set zoom=c:\"Users\gianti.cristian\AppData\Roaming\Zoom\bin\Zoom.exe"
+tasklist /nh /fi "Imagename eq Zoom.exe" | find /i "Zoom.exe" >nul && ( echo: ) || ( 
+start %zoom% 
+timeout /t 15
+)
+
 ::Outlook
 set outlook=c:\"Program Files (x86)\Microsoft Office\Office14\Outlook.exe"
 tasklist /nh /fi "Imagename eq Outlook.exe" | find /i "Outlook.exe" >nul && ( echo: ) || ( 
