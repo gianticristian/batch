@@ -43,12 +43,12 @@ start %shotty%
 timeout /t 15
 )
 
-::Zoom
-set zoom=c:\"Users\gianti.cristian\AppData\Roaming\Zoom\bin\Zoom.exe"
-tasklist /nh /fi "Imagename eq Zoom.exe" | find /i "Zoom.exe" >nul && ( echo: ) || ( 
-start %zoom% 
-timeout /t 15
-)
+::::Zoom
+::set zoom=c:\"Users\gianti.cristian\AppData\Roaming\Zoom\bin\Zoom.exe"
+::tasklist /nh /fi "Imagename eq Zoom.exe" | find /i "Zoom.exe" >nul && ( echo: ) || ( 
+::start %zoom% 
+::timeout /t 15
+::)
 
 ::Outlook
 set outlook=c:\"Program Files (x86)\Microsoft Office\Office14\Outlook.exe"
@@ -75,17 +75,22 @@ timeout /t 60
 set sql=c:\"Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\Ssms.exe"
 tasklist /nh /fi "Imagename eq Ssms.exe" | find /i "Ssms.exe" >nul && ( echo: ) || ( 
 start %sql%
-timeout /t 120
+timeout /t 60
 )
 
 ::OneDrive
 set oneDrive=c:\Users\gianti.cristian\AppData\Local\Microsoft\OneDrive\OneDrive.exe
 tasklist /nh /fi "Imagename eq OneDrive.exe" | find /i "OneDrive.exe" >nul && ( echo: ) || ( 
-start %oneDrive% /background 
-timeout /t 15
-goto Salir
+start %oneDrive% /background
+timeout /t 60
 )
 
+::Teams
+set teams=C:\Users\gianti.cristian\AppData\Local\Microsoft\Teams\current\Teams.exe
+tasklist /nh /fi "Imagename eq Teams.exe" | find /i "Teams.exe" >nul && ( echo: ) || ( 
+start %teams% /background 
+goto Salir
+)
 
 :Salir
 exit
